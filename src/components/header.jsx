@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <>
-      <nav className="w-full h-15 bg-NavBar-bg text-Podcast-card flex items-center mb-5 font-serif">
+      <nav className="w-full h-20 bg-NavBar-bg text-Podcast-card flex items-center  font-serif">
         <div>
           <img src="../src/assets/apple-podcast.svg" alt="podcast icon" />
         </div>
