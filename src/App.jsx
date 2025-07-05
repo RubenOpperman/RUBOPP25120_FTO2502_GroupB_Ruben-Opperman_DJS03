@@ -27,6 +27,7 @@ function App() {
       seasons={podcast.seasons}
       img={podcast.image}
       updated={podcast.updated}
+      genres={podcast.genres}
     />
   ));
 

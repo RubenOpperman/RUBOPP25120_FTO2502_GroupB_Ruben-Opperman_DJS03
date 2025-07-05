@@ -1,6 +1,11 @@
 import TimeUpdated from "../utils/formatDate";
+import Genres from "./genres";
+import { genres } from "../data/genreData";
+import GetGenreIds from "../utils/getGenreIds";
+
 export default function MainContent(props) {
   const updateDate = TimeUpdated(props.updated);
+  const genreList = GetGenreIds(props.genres, genres);
 
   return (
     <div className="rounded-lg border-2 border-[#9CA3AF] bg-Podcast-card p-2 shadow-lg  font-serif ">
@@ -17,7 +22,7 @@ export default function MainContent(props) {
 
         <div className="flex mb-2">
           <img
-            class="w-5 pr-2 h-auto"
+            className="w-5 pr-2 h-auto"
             src="src/assets/gray-calendar-25911.svg"
             alt="grey calander"
           />
@@ -27,10 +32,12 @@ export default function MainContent(props) {
         </div>
 
         <div id="genre-container" className="flex flex-wrap gap-2 mb-2">
-          genre
+          <Genres genreList={genreList} />
         </div>
 
-        <p className="text-xs text-gray-500 p-1 font-semibold">{updateDate}</p>
+        <p className="text-xs text-gray-500 py-1 font-semibold">
+          updated : {updateDate}
+        </p>
       </div>
     </div>
   );
