@@ -9,11 +9,14 @@ import "./App.css";
 
 function App() {
   const [podcastData, setPodcastData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
+      setIsLoading(true);
       const data = await fetchPodcastData();
       setPodcastData(data);
+      setIsLoading(false);
     }
     getData();
   }, []);
@@ -34,9 +37,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4  bg-Background">
-        {podcasts}
-      </div>
+
+      {isLoading ? (
+        <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+          <div className="text-xl font-bold animate-pulse">
+            Loading Podcasts...
+          </div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 bg-Background">
+          {podcasts}
+        </div>
+      )}
     </>
   );
 }
