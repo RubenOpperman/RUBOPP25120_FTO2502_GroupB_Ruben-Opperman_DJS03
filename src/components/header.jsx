@@ -1,3 +1,11 @@
+/**
+ * Navigation bar component for the Podcast Explorer app.
+ *
+ * Displays a fixed top navigation bar with a podcast icon and the app title.
+ *
+ * @returns {JSX.Element} The rendered navigation bar.
+ */
+
 export default function Navbar() {
   return (
     <>

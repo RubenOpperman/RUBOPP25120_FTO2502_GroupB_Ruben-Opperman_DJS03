@@ -1,5 +1,11 @@
-import { genres } from "../data/genreData";
-
+/**
+ * Displays a list of genre tags as styled badges.
+ *
+ * @param {Object} props
+ * @param {string[]} props.genreList - An array of genre names to display.
+ *
+ * @returns {JSX.Element} A container with genre badges.
+ */
 export default function Genres(props) {
   return (
     <div className="flex flex-wrap">

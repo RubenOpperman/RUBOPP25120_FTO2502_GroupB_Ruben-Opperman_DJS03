@@ -1,3 +1,10 @@
+/**
+ * Converts a date string into a human-readable relative time string.
+ * For example: "3 days ago", "5 minutes ago", or "just now".
+ *
+ * @param {string} dateString - The ISO date string to compare with the current time.
+ * @returns {string} A relative time description indicating how long ago the date was.
+ */
 export default function TimeUpdated(dateString) {
   const now = new Date();
   const updated = new Date(dateString);

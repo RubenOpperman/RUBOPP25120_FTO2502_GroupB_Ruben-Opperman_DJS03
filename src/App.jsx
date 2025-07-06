@@ -7,11 +7,24 @@ import { fetchPodcastData } from "./data/podcastData";
 
 import "./App.css";
 
+/**
+ * Main application component for the Podcast Explorer.
+ *
+ * - Fetches podcast data on initial render.
+ * - Displays a loading screen while fetching data.
+ * - Renders the navigation bar and a grid of podcast cards.
+ *
+ * @returns {JSX.Element} The rendered application UI.
+ */
 function App() {
   const [podcastData, setPodcastData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    /**
+     * Fetches podcast data asynchronously and updates state.
+     * Shows loading screen while data is being fetched.
+     */
     async function getData() {
       setIsLoading(true);
       const data = await fetchPodcastData();
